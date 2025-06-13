@@ -1,0 +1,13 @@
+{
+  "invoice_no": "INV001",
+  "invoice_date": "2024-04-05",
+  "vendor_name": "ABC Traders Pvt Ltd",
+  "vendor_gstin": "27ABCDE1234F1Z5",
+  "place_of_supply": "Maharashtra",
+  "reverse_charge": false,
+  "taxable_amount": 10000,
+  "cgst": 900,
+  "sgst": 900,
+  "igst": 0,
+  "total_amount": 11800
+}

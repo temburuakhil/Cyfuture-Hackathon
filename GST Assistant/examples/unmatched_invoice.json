@@ -1,0 +1,9 @@
+{
+    "invoice_number": "INV-1023",
+    "invoice_date": "2024-05-15",
+    "gstin": "29ABCDE1234F1Z5",
+    "vendor_name": "ABC Pvt Ltd",
+    "taxable_value": 50000.0,
+    "gst_amount": 9000.0,
+    "total_amount": 59000.0
+}
