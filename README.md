@@ -122,7 +122,7 @@ npm run dev
 3. Start the GST Assistant:
 ```bash
 cd GST\ Assistant
-python app.py
+streamlit run app.py
 ```
 
 4. Start the Invoice Processor:
@@ -133,7 +133,7 @@ cd backend
 python main.py
 # Terminal 2 - Frontend
 cd frontend
-npm run dev
+npm start
 ```
 
 ## 🤝 Contributing
