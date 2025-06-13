@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  main-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env
+    depends_on:
+      - finbot
+      - gst-assistant
+      - invoice-processor-backend
+
+  finbot:
+    build:
+      context: ./finbot-linguist-ai
+      dockerfile: Dockerfile
+    ports:
+      - "5174:5173"
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - ./finbot-linguist-ai/.env
+
+  gst-assistant:
+    build:
+      context: ./GST Assistant
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHON_ENV=production
+    env_file:
+      - ./GST Assistant/.env
+
+  invoice-processor-backend:
+    build:
+      context: ./invoice-processor/backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - PYTHON_ENV=production
+    env_file:
+      - ./invoice-processor/backend/.env
+    volumes:
+      - ./invoice-processor/uploads:/app/uploads
+      - ./invoice-processor/processed:/app/processed

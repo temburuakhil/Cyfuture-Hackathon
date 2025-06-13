@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_FINBOT_URL": "https://finbot-linguist-ai.onrender.com",
+    "VITE_GST_ASSISTANT_URL": "https://gst-assistant.onrender.com",
+    "VITE_INVOICE_PROCESSOR_URL": "https://invoice-processor.onrender.com"
+  }
+}

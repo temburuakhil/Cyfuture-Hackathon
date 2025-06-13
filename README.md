@@ -136,6 +136,73 @@ cd frontend
 npm run dev
 ```
 
+## 🚀 Deployment
+
+The project is set up for deployment using the following services:
+
+### Main App (Frontend)
+- Deployed on Vercel
+- Automatic deployments on push to main branch
+- Live URL: https://cyfuture-hackathon.vercel.app
+
+### Finbot AI Service
+- Deployed on Render
+- Automatic deployments from main branch
+- Live URL: https://finbot-linguist-ai.onrender.com
+
+### GST Assistant
+- Deployed on Render
+- Automatic deployments from main branch
+- Live URL: https://gst-assistant.onrender.com
+
+### Invoice Processor
+- Backend deployed on Render
+- Frontend deployed on Render
+- Live URL: https://invoice-processor.onrender.com
+
+### Environment Setup
+
+1. Create accounts on:
+   - Vercel (for main app)
+   - Render (for backend services)
+   - GitHub (for source control)
+
+2. Set up environment variables:
+   ```bash
+   # Create .env files from examples
+   cp .env.example .env
+   cp finbot-linguist-ai/.env.example finbot-linguist-ai/.env
+   cp GST\ Assistant/.env.example GST\ Assistant/.env
+   cp invoice-processor/backend/.env.example invoice-processor/backend/.env
+   ```
+
+3. Configure GitHub Secrets:
+   - VERCEL_TOKEN
+   - ORG_ID
+   - PROJECT_ID
+   - RENDER_API_KEY
+
+### Docker Deployment
+
+To deploy using Docker:
+
+```bash
+# Build and run all services
+docker-compose up -d
+
+# Build individual services
+docker-compose up -d main-app
+docker-compose up -d finbot
+docker-compose up -d gst-assistant
+docker-compose up -d invoice-processor-backend
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+```
+
 ## 🤝 Contributing
 
 1. Fork the repository
